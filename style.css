@@ -10,7 +10,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
             color: #1d1d1f;
-            background-color: #ffffff;
+            background-color: #272626;
             line-height: 1.6;
         }
 
@@ -22,7 +22,7 @@
 
         /* ===== HEADER / NAVIGATION ===== */
         header {
-            background-color: #ffffff;
+            background-color: #292929;
             border-bottom: 1px solid #e5e5e7;
             padding: 20px 0;
             position: sticky;
