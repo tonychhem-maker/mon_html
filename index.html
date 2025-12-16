@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="style.css">
-   <!-- ===== Ajoute le lien vers le fichier style.css ===== -->
-  </head>
+</head>
 <body>
 
     <!-- ===== HEADER / NAVIGATION ===== -->
@@ -15,7 +13,6 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <!-- TODO MARDI HTML : Changez le nom (remplacez par VOTRE NOM) -->
                     Tony Chhem
                 </div>
                 <ul class="nav-links">
@@ -29,14 +26,12 @@
     </header>
 
     <!-- ===== HERO SECTION ===== -->
-    <section class="hero">
+    <section class="hero" data-parallax="0.5">
         <div class="container">
-            <h1>
-                <!-- TODO MARDI HTML : Changez ce titre (ex: "Je suis développeur web") -->
+            <h1 class="parallax-element" data-speed="0.3">
                 <div class="hover-underline">ᖴᑌᑎKY ᗪᖇIᑎK</div>
             </h1>
-            <p>
-                <!-- TODO MARDI HTML : Changez cette description (parlez de VOUS) -->
+            <p class="parallax-element" data-speed="0.5">
                 Mes compétences à votre service !
             </p>
             <a href="#projects" class="cta-button">Découvrir mes projets</a>
@@ -46,24 +41,19 @@
     <!-- ===== ABOUT SECTION ===== -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">À propos de moi</h2>
+            <h2 class="section-title parallax-element" data-speed="0.2">À propos de moi</h2>
             
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image parallax-element" data-speed="0.15">
                     <img src="https://via.placeholder.com/400x400" alt="Photo de profil">
                 </div>
 
                 <div class="about-text">
-                    <h2>
-                        <!-- TODO MARDI HTML : Changez ce titre (ex: "Qui suis-je ?") -->
-                        Qui suis-je ?
-                    </h2>
+                    <h2>Qui suis-je ?</h2>
                     <p>
-                        <!-- TODO MARDI HTML : Écrivez un paragraphe sur vous -->
                         Je suis un [domaine] avec [X ans] d'expérience. J'aime [ce que vous aimez faire].
                     </p>
                     <p>
-                        <!-- TODO MARDI HTML : Écrivez un deuxième paragraphe sur vous -->
                         Mon objectif est [votre objectif]. Je travaille avec [vos outils/technologies].
                     </p>
                 </div>
@@ -74,7 +64,7 @@
     <!-- ===== SKILLS SECTION ===== -->
     <section class="skills" id="skills">
         <div class="container">
-            <h2 class="section-title">Mes Compétences</h2>
+            <h2 class="section-title parallax-element" data-speed="0.2">Mes Compétences</h2>
             
             <div class="skills-grid">
                 <div class="skill-card">
@@ -101,7 +91,7 @@
     <!-- ===== PROJECTS SECTION ===== -->
     <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title">Mes Projets</h2>
+            <h2 class="section-title parallax-element" data-speed="0.2">Mes Projets</h2>
             
             <div class="projects-grid">
                 <div class="project-card">
@@ -182,6 +172,45 @@
             </div>
         </div>
     </footer>
+
+    <!-- ===== SCRIPT PARALLAX ===== -->
+    <script>
+        // Effet parallax au scroll
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            
+            // Parallax pour tous les éléments avec data-speed
+            const parallaxElements = document.querySelectorAll('.parallax-element');
+            parallaxElements.forEach(element => {
+                const speed = element.getAttribute('data-speed') || 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Animation au scroll pour les cartes
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observer les cartes de compétences et projets
+        document.querySelectorAll('.skill-card, .project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
 
 </body>
 </html>
