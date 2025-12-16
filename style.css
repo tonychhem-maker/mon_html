@@ -108,7 +108,8 @@
         }
 
         .cta-button:hover {
-            /* TODO MARDI CSS : Ajouter background-color: #0a84ff; */
+            transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
         }
 
         /* ===== ABOUT SECTION ===== */
@@ -235,9 +236,8 @@
             transition: all 0.3s;
         }
 
-        .project-card:hover {
-            /* TODO MARDI CSS : Ajouter transform: translateY(-4px); */
-        }
+        
+
 
         .project-card:nth-child(2) {
             flex-direction: row-reverse;
