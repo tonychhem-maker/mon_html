@@ -182,7 +182,7 @@
             // Parallax pour tous les éléments avec data-speed
             const parallaxElements = document.querySelectorAll('.parallax-element');
             parallaxElements.forEach(element => {
-                const speed = element.getAttribute('data-speed') || 0.5;
+                const speed = element.getAttribute('data-speed') || 0.25;
                 const yPos = -(scrolled * speed);
                 element.style.transform = `translateY(${yPos}px)`;
             });
