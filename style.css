@@ -1,11 +1,5 @@
-/* ===== RÉINITIALISATION (Reset) ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* ===== STYLES GLOBAUX (Design Apple) ===== */
+/* Configuration de base du site : police, couleurs, et débordement horizontal désactivé */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
     color: #f1f1f1;
@@ -14,6 +8,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Conteneur principal pour centrer le contenu avec une largeur maximale */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -21,6 +16,7 @@ body {
 }
 
 /* ===== HEADER / NAVIGATION ===== */
+/* En-tête fixe en haut de la page avec effet de flou en arrière-plan */
 header {
     background-color: rgba(29, 29, 29, 0.95);
     border-bottom: 1px solid #333;
@@ -32,16 +28,19 @@ header {
     transition: all 0.3s ease;
 }
 
+/* L'en-tête devient légèrement plus clair au survol */
 header:hover {
     background-color: rgba(40, 40, 40, 0.98);
 }
 
+/* Navigation avec flexbox pour aligner le logo et les liens */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Style du logo avec effet de zoom au survol */
 .logo {
     font-size: 1.8rem;
     font-weight: 600;
@@ -57,12 +56,14 @@ nav {
     transform: scale(1.02);
 }
 
+/* Liste de liens de navigation en ligne */
 .nav-links {
     display: flex;
     list-style: none;
     gap: 40px;
 }
 
+/* Style des liens avec effet de soulignement animé */
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
@@ -77,6 +78,7 @@ nav {
     color: #23dd61;
 }
 
+/* Ligne de soulignement qui apparaît au survol */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -93,6 +95,7 @@ nav {
 }
 
 /* ===== HERO SECTION ===== */
+/* Section d'accueil principale avec grand titre et bouton d'action */
 .hero {
     background: #0f0f0f;
     color: #ffffff;
@@ -105,6 +108,7 @@ nav {
     position: relative;
 }
 
+/* Titre principal avec animation de déplacement au survol */
 .hero h1 {
     font-size: 4rem;
     font-weight: 700;
@@ -118,6 +122,7 @@ nav {
     transform: translateY(-5px);
 }
 
+/* Effet de changement de couleur sur le titre */
 .hover-underline {
     color: beige;
     display: inline-block;
@@ -129,6 +134,7 @@ nav {
     color: #ffffff;
 }
 
+/* Sous-titre avec effet de changement de couleur au survol */
 .hero p {
     font-size: 1.3rem;
     color: #a1a1a6;
@@ -145,6 +151,7 @@ nav {
     color: #ffffff;
 }
 
+/* Bouton call-to-action avec effet de zoom et d'ombre */
 .cta-button {
     display: inline-block;
     background-color: #23dd61;
@@ -164,11 +171,13 @@ nav {
 }
 
 /* ===== ABOUT SECTION ===== */
+/* Section "À propos" avec photo et texte côte à côte */
 .about {
     background-color: #1d1d1f;
     padding: 120px 0;
 }
 
+/* Titre de section réutilisable avec effet de zoom */
 .section-title {
     font-size: 3rem;
     font-weight: 700;
@@ -183,12 +192,14 @@ nav {
     transform: scale(1.02);
 }
 
+/* Disposition en deux colonnes pour l'image et le texte */
 .about-content {
     display: flex;
     gap: 60px;
     align-items: center;
 }
 
+/* Conteneur de l'image de profil en format carré */
 .about-image {
     flex: 1;
     border-radius: 20px;
@@ -205,6 +216,7 @@ nav {
     transform: scale(1.03);
 }
 
+/* L'image remplit complètement son conteneur sans déformation */
 .about-image img {
     width: 100%;
     height: 100%;
@@ -213,10 +225,12 @@ nav {
     display: block;
 }
 
+/* Colonne de texte de la section "À propos" */
 .about-text {
     flex: 1;
 }
 
+/* Sous-titre de la section avec changement de couleur au survol */
 .about-text h2 {
     font-size: 2.4rem;
     font-weight: 700;
@@ -229,6 +243,7 @@ nav {
     color: #23dd61;
 }
 
+/* Paragraphes de texte avec effet de couleur au survol */
 .about-text p {
     font-size: 1.1rem;
     color: #a1a1a6;
@@ -242,11 +257,13 @@ nav {
 }
 
 /* ===== SKILLS SECTION ===== */
+/* Section des compétences avec cartes disposées en grille */
 .skills {
     background-color: #000000;
     padding: 120px 0;
 }
 
+/* Grille flexible pour les cartes de compétences */
 .skills-grid {
     display: flex;
     gap: 40px;
@@ -255,6 +272,7 @@ nav {
     flex-wrap: wrap;
 }
 
+/* Carte individuelle de compétence avec effet de levitation au survol */
 .skill-card {
     background: #1d1d1f;
     padding: 40px;
@@ -267,6 +285,7 @@ nav {
     border: 1px solid transparent;
 }
 
+/* Au survol : la carte se soulève et change de couleur */
 .skill-card:hover {
     background-color: #2d2d2f;
     transform: translateY(-10px);
@@ -274,6 +293,7 @@ nav {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* Icône emoji de la compétence */
 .skill-icon {
     font-size: 3.5rem;
     margin-bottom: 20px;
@@ -281,10 +301,12 @@ nav {
     transition: transform 0.3s ease;
 }
 
+/* L'icône grandit au survol de la carte */
 .skill-card:hover .skill-icon {
     transform: scale(1.2);
 }
 
+/* Titre de la compétence */
 .skill-card h3 {
     font-size: 1.4rem;
     font-weight: 600;
@@ -292,6 +314,7 @@ nav {
     margin-bottom: 12px;
 }
 
+/* Description de la compétence */
 .skill-card p {
     color: #a1a1a6;
     font-size: 1rem;
@@ -299,11 +322,13 @@ nav {
 }
 
 /* ===== PROJECTS SECTION ===== */
+/* Section des projets avec cartes alternées gauche/droite */
 .projects {
     background-color: #1d1d1f;
     padding: 120px 0;
 }
 
+/* Disposition verticale des cartes de projet */
 .projects-grid {
     display: flex;
     gap: 40px;
@@ -311,6 +336,7 @@ nav {
     flex-direction: column;
 }
 
+/* Carte de projet avec image et contenu côte à côte */
 .project-card {
     display: flex;
     gap: 40px;
@@ -323,15 +349,18 @@ nav {
     overflow: hidden; /* Empêche le débordement */
 }
 
+/* Au survol : changement de couleur et léger zoom */
 .project-card:hover {
     background-color: #3d3d3f;
     transform: scale(1.01);
 }
 
+/* Le deuxième projet a l'image à droite au lieu de gauche */
 .project-card:nth-child(2) {
     flex-direction: row-reverse;
 }
 
+/* Conteneur de l'image du projet avec fond dégradé */
 .project-image {
     width: 40%;
     aspect-ratio: 1 / 1; 
@@ -344,6 +373,7 @@ nav {
     transition: transform 0.3s ease;
 }
 
+/* Image du projet qui remplit son conteneur */
 .project-image img {
     width: 100%;
     height: 100%;
@@ -351,14 +381,17 @@ nav {
     transition: transform 0.5s ease;
 }
 
+/* Zoom sur l'image au survol de la carte */
 .project-card:hover .project-image img {
     transform: scale(1.1);
 }
 
+/* Contenu textuel du projet */
 .project-content {
     flex: 1;
 }
 
+/* Titre du projet avec changement de couleur au survol */
 .project-content h3 {
     font-size: 1.8rem;
     font-weight: 700;
@@ -371,6 +404,7 @@ nav {
     color: #23dd61;
 }
 
+/* Description du projet */
 .project-content p {
     color: #a1a1a6;
     margin-bottom: 20px;
@@ -378,6 +412,7 @@ nav {
     line-height: 1.7;
 }
 
+/* Lien "Voir le projet" avec effet de déplacement horizontal */
 .project-link {
     display: inline-block;
     color: #23dd61;
@@ -393,11 +428,13 @@ nav {
 }
 
 /* ===== CONTACT SECTION / FORM ===== */
+/* Section de contact avec formulaire centré */
 .contact {
     background-color: #000000;
     padding: 120px 0;
 }
 
+/* Titre de la section contact */
 .contact h2 {
     text-align: center;
     font-size: 3rem;
@@ -406,6 +443,7 @@ nav {
     color: #ffffff;
 }
 
+/* Formulaire de contact avec disposition verticale */
 .contact-form {
     max-width: 500px;
     margin: 0 auto;
@@ -414,12 +452,14 @@ nav {
     gap: 24px;
 }
 
+/* Groupe de champ de formulaire (label + input) */
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
+/* Label du champ avec changement de couleur au survol */
 .form-group label {
     font-weight: 500;
     font-size: 1rem;
@@ -431,6 +471,7 @@ nav {
     color: #23dd61;
 }
 
+/* Champs de saisie et textarea avec bordure animée au focus */
 .form-group input,
 .form-group textarea {
     padding: 12px 16px;
@@ -443,6 +484,7 @@ nav {
     transition: all 0.3s ease;
 }
 
+/* Au focus : bordure verte et fond légèrement plus clair */
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
@@ -450,11 +492,13 @@ nav {
     background-color: #2d2d2f;
 }
 
+/* Zone de texte redimensionnable verticalement */
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
 }
 
+/* Bouton d'envoi du formulaire avec effet de levitation */
 .submit-button {
     background-color: #23dd61;
     color: white;
@@ -475,6 +519,7 @@ nav {
 }
 
 /* ===== FOOTER ===== */
+/* Bas de page avec informations et liens */
 footer {
     background-color: #1d1d1f;
     color: #86868b;
@@ -483,6 +528,7 @@ footer {
     border-top: 1px solid #333;
 }
 
+/* Contenu du footer disposé en colonnes */
 .footer-content {
     display: flex;
     justify-content: space-around;
@@ -492,6 +538,7 @@ footer {
     margin-bottom: 40px;
 }
 
+/* Titre de chaque section du footer */
 .footer-section h3 {
     font-size: 1rem;
     font-weight: 600;
@@ -499,17 +546,20 @@ footer {
     margin-bottom: 12px;
 }
 
+/* Texte des sections du footer */
 .footer-section p {
     font-size: 0.9rem;
     line-height: 1.6;
 }
 
+/* Liens des réseaux sociaux en ligne */
 .social-links {
     display: flex;
     gap: 20px;
     justify-content: center;
 }
 
+/* faux icônes des réseaux sociaux avec effet de zoom */
 .social-links a {
     color: #86868b;
     text-decoration: none;
@@ -522,6 +572,7 @@ footer {
     transform: scale(1.2);
 }
 
+/* Copyright en bas du footer mdr*/
 .footer-bottom {
     font-size: 0.85rem;
     color: #424245;
