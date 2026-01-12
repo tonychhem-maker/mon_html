@@ -1,7 +1,16 @@
+ /* ===== RÉINITIALISATION (Reset) ===== */ 
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+
 /* ===== STYLES GLOBAUX (Design Apple) ===== */
 /* Configuration de base du site : police, couleurs, et débordement horizontal désactivé */
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    .sekuya-regular {
+  font-family: "Sekuya", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
     color: #f1f1f170;
     background-color: #000000;
     line-height: 1.6;
@@ -134,7 +143,7 @@ nav {
     z-index: 1;
 }
 
-/* Titre principal avec animation de déplacement au survol */
+/* Titre principal */
 .hero h1 {
     font-size: 4rem;
     font-weight: 700;
